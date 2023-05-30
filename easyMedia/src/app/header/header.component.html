@@ -1,0 +1,30 @@
+<mat-toolbar color="white">
+  <mat-toolbar-row>
+    
+    <div class="col-6">
+        <img src="assets/logo-black 1.png" alt="">
+        <span>Easy Media</span>
+    </div>
+
+    <div class="col-6" style="text-align: end">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        [matMenuTriggerFor]="menu"
+      >
+        <mat-icon>menu</mat-icon>
+        <mat-menu #menu="matMenu">
+          <div class="container">
+            <span for="name" style="text-align: center;">Juan Gualteros</span>
+            <hr />
+            <button mat-menu-item routerLink="/create-post">Create Publication</button>
+            <button mat-menu-item routerLink="/my-posts">My Publication</button>
+            <button mat-menu-item routerLink="/all-posts">See All Publications</button>
+            <button mat-menu-item routerLink="/login">Logout</button>
+          </div>
+        </mat-menu>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,94 @@
+<div
+  class="container"
+
+>
+ 
+    <br />
+    <div class="row">
+        <div class="col-12">
+            <img src="/assets/image.png" alt="image">
+        </div>
+    </div>
+    <div class="row" style="text-align: center">
+      <div class="col-12" display="grid">
+        <mat-label
+          for="title"
+          style="font-size: xx-large; color: white; font-family: bold"
+          >Easy Media</mat-label
+        >
+      </div>
+    </div>
+    <br />
+    <div class="row" style="text-align: center">
+      <div class="col-12">
+        <mat-label style="color: #5dcdc5">Now, share is easy</mat-label>
+      </div>
+    </div>
+    <br />
+    <div class="row" style="text-align: center">
+      <div class="col-12">
+        <label style="font-size: large; color: white">Sign In</label>
+      </div>
+    </div>
+    <br />
+    <div class="row" style="color: #9b8adb">
+      <div class="col-12">
+        <mat-form-field style="width: 100%" appearance="outline">
+          <mat-label type="Email" style="color: black">Email</mat-label>
+          <input
+            style="color: white"
+            matInput
+            placeholder="example@email.com"
+            [formControl]="email"
+            [(ngModel)]="logIn.email"
+            required
+          />
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label style="color: black">Password</mat-label>
+          <input
+            style="color: white"
+            matInput
+            minlength="8"
+            placeholder="********"
+            [formControl]="password"
+            [(ngModel)]="logIn.password"
+            required
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button mat-raised-button color="primary" style="width: 100%" (click)=" login(); "  >
+          SIGN IN
+        </button>
+        <!-- <mat-error *ngIf="email.invalid || password.invalid">{{
+          getErrorMessage()
+        }}</mat-error> -->
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-12" style="text-align: end;">
+        <span style="font-size: smaller;">Don't have an account? <a href="/register">Sign up here</a></span>
+      </div>
+    </div>
+    <br />
+  
+</div>
